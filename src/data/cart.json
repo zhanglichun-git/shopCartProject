@@ -1,0 +1,28 @@
+{
+    "allShops":{
+        "totalMoney":0,
+        "shopList":[
+            {
+                "shopId":"1001",
+                "shopName":"玥明子2017春秋新款韩版加肥加大码女装胖MM胖妹妹秋装胖人显瘦毛衣外套中长款打底连衣裙女 黑色 XXXL 150-168斤左右",
+                "shopPrice":299,
+                "shopNumber":1,
+                "shopImage":"/src/images/detail1.jpg"
+            },
+            {
+                "shopId":"1002",
+                "shopName":"大码女装胖MM胖妹妹秋装胖人显瘦毛衣外套中长款打底连衣裙女 黑色 XXXL 150-168斤左右",
+                "shopPrice":199.00,
+                "shopNumber":1,
+                "shopImage":"/src/images/shop1.jpg"
+            },
+            {
+                "shopId":"1003",
+                "shopName":"显瘦毛衣外套中长款打底连衣裙女 黑色 XXXL 150-168斤左右",
+                "shopPrice":50.00,
+                "shopNumber":2,
+                "shopImage":"/src/images/detail1.jpg"
+            }
+        ]
+    }
+}

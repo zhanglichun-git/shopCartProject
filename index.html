@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shopCart</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./src/css/common.css">
+    <link  rel="stylesheet" href="./src/css/index.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.10.0-beta/less.min.js" ></script> -->
+    <!-- <link  rel="stylesheet/less" href="./src/css/index.less"> -->
+    
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部 -->
+        <header>
+            <a class="icon-back"></a>
+            <h3 class="header-title">购物车</h3>
+            <a class="icon-menu"></a>
+        </header>
+        <!-- 安全提示 -->
+        <section class="safe-tip">
+            <p class="tip-word">您正在安全购物环境中，请放心购物</p>
+        </section>
+        <!-- 主列表 -->
+        <main class="shop-list">
+            <section v-for="(shop,index) in shopListArr">
+                <div class="shop-cart-list-title">
+                    <div class="title-left">
+                        <!-- <input class="cart-check-box" type="checkbox" :checked="shop.checked" @click="selectSinger(shop)"> -->
+                        <span class="cart-logo"></span>
+                        <span>京东自营</span>
+                    </div>
+                    <span class="title-right">您享受满100元免运费服务</span>
+                </div>
+                <div class="shop-cart-list-detail">
+                    <div class="detail-left">
+                        <input class="cart-check-box" type="checkbox" :checked="shop.checked" @click="selectSinger(shop)">
+                    </div>
+                    <div class="detail-center">
+                        <img :src="shop.shopImage" alt="">
+                    </div>
+                    <div class="detail-right">
+                        <a href="#" class="shop-title">{{shop.shopName}}</a>
+                        <p class="shop-price">
+                            <span>{{shop.shopPrice|moneyFormat}}</span>
+                            <span class="rt">{{shop.shopPrice*shop.shopNumber|moneyFormat}}</span>
+                        </p>
+                        <div class="shop-deal">
+                            <span @click="singerShopCalculate(0,shop)">-</span>
+                            <input type="number" :value="shop.shopNumber">
+                            <span @click="singerShopCalculate(1,shop)">+</span>
+                        </div>
+                        <div class="shop-trash" @click="clickTrash(shop)">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- footer -->
+        <footer>
+                <input class="cart-check-box" type="checkbox" :checked="isSelectAll" @click="selectAll(isSelectAll)">
+                <span class="check-text">全选</span>
+                <span class="totle">合计:<b class="t-price">{{totalPrice}}</b></span>
+                <a href="javascript:;" class="buy">结算
+                    <!-- <span class="buy-number">{{}}</span> -->
+                </a>
+        </footer>
+        <div class="panel" :class="{'panel-hide':isDelatePanelHide}">
+            <div class="panel-content">
+                <div class="panel-header">
+                    <p>您确认删除这个商品吗?</p>
+                </div>
+                <div class="panel-body">
+                    <button class="cancel lf" type="button" @click="isDelatePanelHide=true">取消</button>
+                    <button class="submit rt" type="button" @click="delateShop()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script> -->
+    <script src="./src/js/cart.js"></script>
+    <!-- <script src="./dist/js/bundle.js"></script> -->
+</body>
+
+</html>
