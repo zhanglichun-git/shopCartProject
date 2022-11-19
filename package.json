@@ -15,7 +15,7 @@
     "vue": "^2.6.11",
     "vue-resource": "^1.5.1",
     "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.10.1"
   }
 }
